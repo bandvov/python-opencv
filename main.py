@@ -54,13 +54,12 @@ while (True):
             coord_x_center = int(x + w/2)
             coord_y_center = int(y + h/2)
 
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            cv2.rectangle(frame, (x - 10, y - 10),
+                          (x + w + 10, y + h + 10), (0, 255, 0), 2)
             cv2.line(frame, (coord_x_center, 0),
                      (coord_x_center, 1280), (0, 0, 255), 1)
             cv2.line(frame, (0, coord_y_center),
                      (1280, coord_y_center), (0, 0, 255), 1)
-
-        # cv2.drawContours(frame, [cnt], -1, (0, 255, 0), 2)
 
     cv2.imshow('Frame', frame)
     cv2.imshow('mask', mask)
