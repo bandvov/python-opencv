@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 cap = cv2.VideoCapture("136_2.mp4")
@@ -53,6 +52,11 @@ while (True):
             x, y, w, h = cv2.boundingRect(cnt)
             coord_x_center = int(x + w/2)
             coord_y_center = int(y + h/2)
+
+            # cv2.circle(frame, (coord_x_center, coord_y_center),
+            #            100, (122, 0, 0), 2)
+            # cv2.circle(frame, (int(height/2), int(width/2)),
+            #            100,  (122, 0, 0), 2)
 
             cv2.rectangle(frame, (x - 10, y - 10),
                           (x + w + 10, y + h + 10), (0, 255, 0), 2)
